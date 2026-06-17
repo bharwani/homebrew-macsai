@@ -1,8 +1,8 @@
 cask "mac-sai" do
-  version "1.11.4"
+  version "1.11.7"
   # Set to the published DMG's hash at release time. build-dmg.sh prints
   # "SHA256:" at the end; the release workflow fills this in automatically.
-  sha256 "037b522453eadd3e5d5cfeff90046d367e483338d92cf1e25b2670d647a815bc"
+  sha256 "c17ad761c8268a681f42c6bfef6d0ce4dde610ff3928aaf67c34e4fd9a0b3767"
 
   url "https://github.com/iliyami/MacSai/releases/download/v#{version}/MacSai-#{version}.dmg",
       verified: "github.com/iliyami/MacSai/"
@@ -15,6 +15,8 @@ cask "mac-sai" do
     strategy :github_latest
   end
 
+  # Symbol form means "this release or newer"; the old comparison-string
+  # form (">= :sonoma") is deprecated by Homebrew and warns on every install.
   depends_on macos: :sonoma
 
   app "Mac Sai.app"
