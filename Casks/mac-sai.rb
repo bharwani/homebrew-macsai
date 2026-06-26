@@ -1,8 +1,8 @@
 cask "mac-sai" do
-  version "1.13.0"
+  version "1.14.1"
   # Set to the published DMG's hash at release time. build-dmg.sh prints
   # "SHA256:" at the end; the release workflow fills this in automatically.
-  sha256 "f9807dfcce785fc7d77cf4a32ce8594594a3cf3f2c78085f08f308807e07b16b"
+  sha256 "37c26c2ee8db01862a3265ecae766f593fcf57af65cee783013fd6b0ca0f8114"
 
   url "https://github.com/iliyami/MacSai/releases/download/v#{version}/MacSai-#{version}.dmg",
       verified: "github.com/iliyami/MacSai/"
@@ -24,8 +24,10 @@ cask "mac-sai" do
   zap trash: [
     "~/Library/Application Support/MacClean",
     "~/Library/Caches/com.macclean.app",
+    "~/Library/HTTPStorages/com.macclean.app",
     "~/Library/Logs/MacClean",
     "~/Library/Preferences/com.macclean.app.plist",
+    "~/Library/Preferences/com.macclean.shared.plist",
     "~/Library/Saved Application State/com.macclean.app.savedState",
   ]
 
